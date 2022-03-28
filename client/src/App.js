@@ -6,19 +6,28 @@ import Home from './components/shared/Home';
 import Login from './components/auth/Login';
 import Register from './components/auth/Register';
 import NoMatch from './components/shared/NoMatch';
+import FetchUser from './components/shared/FetchUser';
+import ProtectedRoute from './components/auth/ProtectRoute';
 
 function App() {
   return (
     <div className="App">
       <NavBar />
+      
+        <FetchUser>
       <>
-        <Routes>
-          <Route path='/' element={<Home />} />
-          <Route path='/login' element={<Login />} />
-          <Route path='/register' element={<Register />} />
-          <Route path='*' element={<NoMatch />}/>
-        </Routes>
+          <Routes>
+            {/* Unprotected */}
+                <Route path='/login' element={<Login />} />
+                <Route path='/register' element={<Register />} />
+            
+            <Route element={<ProtectedRoute/>}>
+                <Route path='/' element={<Home />} />
+           </Route>
+                <Route path='*' element={<NoMatch />} />
+          </Routes>
       </>
+          </FetchUser>
     </div>
   );
 }
