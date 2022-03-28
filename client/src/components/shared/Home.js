@@ -8,7 +8,7 @@ const Home = () => {
   }
   return (
     <div>
-      <h1> Home </h1>
+      <h1>My Home </h1>
       <p>Hello {auth.user.email}</p>
       <p>{JSON.stringify(auth)}</p>
     </div>
