@@ -28,7 +28,8 @@ const AuthProvider = ({children}) => {
     try {
       //this should give us back user from DataBase
       //assumes email and password are correct
-      let res = await axios.post('/api/auth/sign_in', user);
+      let res = await axios.post('/api/auth/sign_in',user);
+      console.log(res)
       setUser(res.data.data)
       navigate('/')
       //setUser

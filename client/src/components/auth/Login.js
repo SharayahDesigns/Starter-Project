@@ -4,6 +4,7 @@ import { AuthContext } from '../../providers/AuthProvider'
 const Login = () => {
   const [email,setEmail] = useState('test@test.com')
   const [password,setPassword] = useState('123456')
+  const [name, setName]= useState('')
   const auth = useContext(AuthContext)
   
   
@@ -16,6 +17,8 @@ const Login = () => {
     <div>
       <h1>Login</h1>
       <form onSubmit={handleSubmit}>
+        {/* <p>Name:</p>
+        <input value={name} onChange={(e) => setName(e.target.value)} /> */}
       <p>Email:</p>
         <input value={email} onChange={(e) => setEmail(e.target.value)} />
         <p>Password:</p>

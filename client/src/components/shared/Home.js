@@ -10,6 +10,8 @@ const Home = () => {
     <div>
       <h1>My Home </h1>
       <p>Hello {auth.user.email}</p>
+      <p>Hello {auth.user.name}</p>
+      
       <p>{JSON.stringify(auth)}</p>
     </div>
   )
